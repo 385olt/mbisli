@@ -1,3 +1,5 @@
+# coding=utf-8
+
 from flask import render_template, flash, redirect, g
 from app import app
 from .models import getThoughts, getDate, getImage
