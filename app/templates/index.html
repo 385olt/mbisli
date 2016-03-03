@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Мысли на каждый день ({{ date }})</title>
+    <link rel=icon href={{ url_for('static', filename='images/favicon.png') }} sizes="128x128" type="image/png">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}"  media="screen,projection"/>
+
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div class="row main-row">
+      <div class="parallax-container">
+        <div class="parallax"><img src="{{ url_for('static', filename='images/background.jpg') }}"></div>
+        <div class="col s8 offset-s2">
+          <h4 class="center-align date"><span>{{ date }}</span></h4>
+          <div class="card-panel thoughts">
+            {% autoescape false %}
+              {{ content }}
+            {% endautoescape %}
+          </div>
+          <h6 class="center-align date"><span>Лев Толстой &laquo;Мысли Мудрый Людей на Каждый День&raquo;, Издание В.М.Саблина, 1911</span></h6>
+        </div>
+      </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $('.parallax').parallax();
+    });
+    </script>
+</body>
+</html>
