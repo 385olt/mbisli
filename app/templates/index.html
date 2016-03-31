@@ -12,6 +12,8 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8">
+
+    <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
   </head>
   <body>
     <div class="row main-row">
@@ -23,6 +25,17 @@
             {% autoescape false %}
               {{ content }}
             {% endautoescape %}
+          </div>
+          <div class="right-align">
+          	<script type="text/javascript">
+				document.write(VK.Share.button({
+				  url: 'http://mbisli.ru',
+				  title: 'Мысли на каждый день ({{ date }})',
+				  description: '{{ content }}',
+				  image: '{{ url_for('static', filename='images/backgrounds/' + image + '.jpg') }}',
+				  noparse: true
+				}));
+			</script>
           </div>
           <h6 class="center-align date"><span>Лев Толстой &laquo;Мысли Мудрых Людей на Каждый День&raquo;, Издание В.М.Саблина, 1911</span></h6>
         </div>

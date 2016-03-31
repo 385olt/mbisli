@@ -9,4 +9,5 @@ from .models import getThoughts, getDate, getImage
 def index():
 	dateString, month, day = getDate()
 	image = getImage(month, day)
-	return render_template('index.html', content=getThoughts(month, day), date=dateString, image=str(image))
+	content = getThoughts(month, day)
+	return render_template('index.html', content=content, date=dateString, image=str(image))
