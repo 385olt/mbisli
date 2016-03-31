@@ -34,7 +34,7 @@
 				document.write(VK.Share.button({
 				  url: 'http://mbisli.ru',
 				  title: 'Мысли на каждый день ({{ date }})',
-				  description: '{{ content_nohtml }}'.replace("\r\n", "."),
+				  description: '{{ content_nohtml }}',
 				  image: 'http://mbisli.ru{{ url_for('static', filename='images/backgrounds/' + image + '.jpg') }}',
 				  noparse: false
 				}, {type: "custom", text: '<button class="waves-effect waves-teal btn-flat grey lighten-3" type="submit" name="action">Поделиться мыслью<i class="material-icons right">send</i></button>'}));
