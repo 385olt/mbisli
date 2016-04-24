@@ -5,6 +5,11 @@ import html2text
 from app import app
 from .models import getThoughts, getDate, getImage
 
+@app.route('/callback', methods=['GET'])
+def callback():
+	print(request.args.get('oauth_verifier') + " | my test ", file=sys.stderr)
+	return ''
+
 @app.route('/')
 @app.route('/index')
 def index():
